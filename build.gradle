@@ -1,0 +1,47 @@
+buildscript {
+    ext.hilt_version='2.44'
+    repositories {
+        google()
+        mavenCentral{
+            allowInsecureProtocol(true)
+        }
+        maven { url 'https://jitpack.io'
+            allowInsecureProtocol(true)
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.4'
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+
+    }
+}
+
+plugins {
+    id 'com.android.application' version '7.3.1' apply false
+    id 'com.android.library' version '7.3.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
+}
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral{
+            allowInsecureProtocol(true)
+        }
+        maven { url 'https://jitpack.io'
+            allowInsecureProtocol(true)
+        }
+        maven {
+            url 'http://nexus.arashivision.com:9999/repository/maven-public/'
+            credentials {
+                username = 'deployment'
+                password = 'test123'
+            }
+            allowInsecureProtocol(true)
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,11 @@
+pluginManagement {
+    repositories {
+        mavenCentral{
+            allowInsecureProtocol true
+        }
+        gradlePluginPortal()
+        google()
+    }
+}
+rootProject.name = "SdkInstaTest"
+include ':app'

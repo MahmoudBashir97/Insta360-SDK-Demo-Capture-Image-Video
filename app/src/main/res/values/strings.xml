@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SdkInstaTest</string>
+    <string name="capture_toast_sd_card_error">No SD card inserted or Not enough free space</string>
+</resources>
